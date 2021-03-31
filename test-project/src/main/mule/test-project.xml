@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="946874e2-abb3-4446-afc6-45b3e4173685" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="test-projectFlow" doc:id="df66b997-2bcc-4bcd-8cef-1faf6bf353b5" >
+		<http:listener doc:name="Listener" doc:id="e2918536-8693-4490-a255-c0751b018249" config-ref="HTTP_Listener_config" path="/demo"/>
+		<logger level="INFO" doc:name="Logger" doc:id="262a5bd2-994b-4092-b23e-564da0781bfe" message="request received"/>
+		<set-payload value='{"name":"shrinika"}' doc:name="Set Payload" doc:id="d3400b63-e883-4438-b7c4-1bdd2544db84" mimeType="application/json"/>
+	</flow>
+</mule>
