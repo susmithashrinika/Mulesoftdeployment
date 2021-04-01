@@ -37,7 +37,7 @@
 						  <businessGroup>sush</businessGroup>
 						  <username>${username}</username>
 						  <password>${password}</password>
-						  <applicationName>demo-mule-project</applicationName>
+						  <applicationName>demo-mule-project123</applicationName>
 						  <environment>${environment}</environment>
 						  <workers>${workers}</workers>
 						  <objectStoreV2>true</objectStoreV2>
