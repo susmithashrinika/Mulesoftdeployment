@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="754732df-0329-4907-b76b-f2d6192c5280" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ownFlow" doc:id="16d21f91-3d49-4f97-b1b4-0235788e4047" >
+		<http:listener doc:name="Listener" doc:id="5f06d54b-d78f-4939-a1b7-c90e38d321fc" config-ref="HTTP_Listener_config" path="/susi"/>
+		<logger level="INFO" doc:name="Logger" doc:id="977f3a1c-dee2-4977-b275-5081ded45963" message="message invoked"/>
+		<set-payload value='{"name":"susi"}' doc:name="Set Payload" doc:id="4befab8a-09ad-4d88-974d-23c8e95bfe46" />
+	</flow>
+</mule>

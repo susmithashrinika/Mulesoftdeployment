@@ -9,14 +9,14 @@ pipeline{
  	stage ('Build'){
  		steps {
  			withMaven(maven:'maven'){
- 				sh 'mvn -f demo-mule-project/pom.xml clean install'
+ 				sh 'mvn -f own/pom.xml clean install'
  			}
  		}
  	}
  	stage ('Deploy'){
  		steps {
  			withMaven(maven:'maven'){
- 				sh 'mvn -f demo-mule-project/pom.xml package deploy  -Dusername=susmithashrinika -Dpassword=Ankit123 -Denvironment=Sandbox -Dworkers=1 -DworkerType=MICRO -DmuleVersion=4.3.0 -DmuleDeploy'
+ 				sh 'mvn -f own/pom.xml package deploy  -Dusername=susmithashrinika -Dpassword=Ankit123 -Denvironment=Sandbox -Dworkers=1 -DworkerType=MICRO -DmuleVersion=4.3.0 -DmuleDeploy'
  			}
  		}
  	}
