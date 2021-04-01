@@ -16,7 +16,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			withMaven(maven:'maven'){
- 				sh 'mvn -f test-project/pom.xml package deploy  -Dusername=susimule -Dpassword=Ankit123 -Denvironment=Sandbox -DmuleDeploy'
+ 				sh 'mvn -f test-project/pom.xml package deploy  -Dusername=susmithashrinika -Dpassword=Ankit123 -Denvironment=Sandbox -Dworkers=1 -DworkerType=MICRO -DmuleVersion=4.3.0 -DmuleDeploy'
  			}
  		}
  	}
