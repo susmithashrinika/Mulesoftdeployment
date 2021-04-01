@@ -40,6 +40,7 @@
 						  <applicationName>test-project-xyz</applicationName>
 						  <environment>${environment}</environment>
 						  <workers>${workers}</workers>
+						  <objectStoreV2>true</objectStoreV2>
 						  <workerType>${workerType}</workerType>
 					   </cloudHubDeployment>
 					</configuration>
